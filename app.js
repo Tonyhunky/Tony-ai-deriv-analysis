@@ -2,7 +2,7 @@
 // TONY DERIV AI ANALYSIS - Analysis Only, No Trading
 // Uses official Deriv public WebSocket endpoint (no auth required for tick data)
 
-const DERIV_WS_URL = 'wss://api.derivws.com/trading/v1/options/ws/public';
+const DERIV_WS_URL = 'wss://ws.derivws.com/websockets/v3?app_id=1089';
 const SYMBOL = 'R_100';
 const MAX_HISTORY = 1000;
 
