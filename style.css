@@ -1,0 +1,294 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0a0e17;
+  color: #e0e6ed;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #00d4ff;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+.status {
+  font-weight: 600;
+}
+
+.status.connected {
+  color: #00ff88;
+}
+
+.status.disconnected {
+  color: #ff4466;
+}
+
+.live-section {
+  background: #111827;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #1e293b;
+}
+
+.live-tick .label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  letter-spacing: 1px;
+}
+
+.live-tick .price {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #ffffff;
+  margin: 8px 0;
+}
+
+.live-tick .digit {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00d4ff;
+  background: #1e293b;
+  padding: 4px 16px;
+  border-radius: 8px;
+}
+
+.analysis-section {
+  background: #111827;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #1e293b;
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.analysis-header h2 {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #94a3b8;
+}
+
+.window-selector {
+  display: flex;
+  gap: 4px;
+}
+
+.window-selector button {
+  background: #1e293b;
+  border: none;
+  color: #94a3b8;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.window-selector button.active {
+  background: #00d4ff;
+  color: #0a0e17;
+  font-weight: 600;
+}
+
+.digit-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.digit-cell {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.digit-cell.highlight {
+  border-color: #00d4ff;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+}
+
+.digit-cell .digit-num {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.digit-cell .digit-count {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.digit-cell .digit-pct {
+  display: block;
+  font-size: 0.85rem;
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+.signal-section {
+  background: #111827;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #1e293b;
+}
+
+.signal-section h2 {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.signal-display {
+  text-align: center;
+}
+
+.signal-text {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.signal-text.no-signal {
+  color: #64748b;
+}
+
+.signal-text.match-signal {
+  color: #00ff88;
+}
+
+.signal-text.differs-signal {
+  color: #ffaa00;
+}
+
+.signal-reason {
+  display: block;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+.history-section {
+  background: #111827;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #1e293b;
+}
+
+.history-section h2 {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.empty-history {
+  color: #64748b;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.signal-item {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.signal-item .sig-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.signal-item .sig-type {
+  font-weight: 700;
+}
+
+.signal-item .sig-type.match {
+  color: #00ff88;
+}
+
+.signal-item .sig-type.differs {
+  color: #ffaa00;
+}
+
+.signal-item .sig-time {
+  color: #64748b;
+}
+
+.signal-item .sig-detail {
+  color: #94a3b8;
+}
+
+.footer {
+  text-align: center;
+  padding: 16px 0;
+  font-size: 0.7rem;
+  color: #475569;
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+@media (max-width: 480px) {
+  .digit-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+  }
+  
+  .digit-cell {
+    padding: 8px 4px;
+  }
+  
+  .live-tick .price {
+    font-size: 2rem;
+  }
+}
