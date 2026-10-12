@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TONY DERIV AI ANALYSIS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>TONY DERIV AI ANALYSIS</h1>
+      <div class="status-bar">
+        <span id="connection-status" class="status disconnected">● DISCONNECTED</span>
+        <span id="tick-count">Ticks: 0</span>
+      </div>
+    </header>
+
+    <section class="live-section">
+      <div class="live-tick">
+        <span class="label">LIVE PRICE (R_100)</span>
+        <span id="live-price" class="price">---.---</span>
+        <span id="live-digit" class="digit">-</span>
+      </div>
+    </section>
+
+    <section class="analysis-section">
+      <div class="analysis-header">
+        <h2>DIGIT FREQUENCY ANALYSIS</h2>
+        <div class="window-selector">
+          <button data-window="100" class="active">100</button>
+          <button data-window="500">500</button>
+          <button data-window="1000">1000</button>
+        </div>
+      </div>
+      <div class="digit-grid" id="digit-grid"></div>
+    </section>
+
+    <section class="signal-section">
+      <h2>SIGNAL</h2>
+      <div id="signal-display" class="signal-display">
+        <span class="signal-text no-signal">NO SIGNAL</span>
+        <span id="signal-reason" class="signal-reason">Waiting for sufficient data...</span>
+      </div>
+    </section>
+
+    <section class="history-section">
+      <h2>SIGNAL HISTORY</h2>
+      <div id="signal-history" class="signal-history">
+        <p class="empty-history">No signals generated yet.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>This is an analysis-only tool. Place all trades manually.</p>
+      <p>Past performance does not guarantee future results.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
